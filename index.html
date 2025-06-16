@@ -3,156 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio - Développeur Web</title>
-    <meta name="description" content="Portfolio personnel d'un développeur web, présentant projets, compétences et biographie.">
-    <meta name="keywords" content="développeur web, portfolio, HTML, CSS, JavaScript, projets, compétences">
-    <meta name="author" content="Votre Nom">
+    <title>Mehdi Naceri - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles généraux pour améliorer la lisibilité */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e; /* Fond sombre */
+            color: #e0e0e0; /* Texte clair */
+            line-height: 1.6;
+        }
 
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* En-tête et Navigation */
+        header {
+            background-color: #0f3460; /* Bleu foncé pour l'en-tête */
+            color: #ffffff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff5722; /* Orange vif au survol */
+        }
+
+        /* Section d'accueil (Hero) */
+        #home {
+            background-color: #2e3047; /* Un peu plus clair que le fond général */
+            color: #ffffff;
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        #home h1 span {
+            color: #ff5722; /* Orange vif pour le nom */
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .btn {
+            background-color: #ff5722; /* Bouton orange */
+            color: #ffffff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e64a19; /* Orange plus foncé au survol */
+        }
+
+        /* Sections générales */
+        section {
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid #3a3a5a; /* Ligne de séparation légère */
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            color: #ff5722; /* Titres de section en orange */
+        }
+
+        /* Section Projets */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-item {
+            background-color: #16213e; /* Fond d'encart de projet plus clair */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #0f3460;
+        }
+
+        .project-item h3 {
+            font-size: 1.6rem;
+            color: #ff5722;
+            margin-bottom: 10px;
+        }
+
+        .project-item p {
+            font-size: 1rem;
+            color: #c0c0c0;
+            margin-bottom: 20px;
+        }
+
+        .project-item a {
+            display: inline-block;
+            background-color: #0f3460;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-item a:hover {
+            background-color: #ff5722;
+        }
+
+        /* Section Contact */
+        #contact .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        #contact .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            color: #c0c0c0;
+        }
+
+        #contact .contact-item i {
+            color: #ff5722;
+            font-size: 1.8rem;
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #0f3460;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        footer .social-links a {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #ff5722;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            #home h1 {
+                font-size: 2.5rem;
+            }
+
+            #home p {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #contact .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <a href="#home" class="nav-logo">Votre Nom</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">À propos</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projets</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Compétences</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Mehdi Naceri</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#presentation">Présentation</a></li>
+                    <li><a href="#entreprise">Entreprise</a></li>
+                    <li><a href="#projet-e5">Projet E5</a></li>
+                    <li><a href="#projet-e6">Projet E6</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">Salut, je suis <span class="highlight">Votre Nom</span>.</h1>
-                <p class="hero-subtitle">Je crée des expériences web uniques et performantes.</p>
-                <a href="#projects" class="btn-primary">Voir mes projets</a>
+        <section id="home">
+            <div class="container">
+                <h1>Salut, je suis <span>Mehdi Naceri</span></h1>
+                <p>Je crée des expériences web uniques et performantes.</p>
+                <a href="#projet-e5" class="btn">Voir mes projets</a>
             </div>
         </section>
 
-        <section id="about" class="section">
+        <section id="presentation">
             <div class="container">
-                <h2>À propos de moi</h2>
-                <div class="about-content">
-                    <p>Bonjour ! Je suis **Votre Nom**, un développeur web passionné par la création d'interfaces intuitives et de solutions robustes. Fort d'une expérience en **[mentionnez votre domaine spécifique, ex: développement frontend, backend, fullstack]**, je m'engage à écrire un code propre, performant et maintenable.</p>
-                    <p>Mon parcours m'a permis de travailler sur divers projets, du site vitrine responsif à l'application web complexe. J'aime particulièrement transformer des idées complexes en expériences utilisateur fluides et agréables. Lorsque je ne suis pas devant mon écran, vous me trouverez probablement en train de **[mentionnez un hobby, ex: explorer de nouvelles technologies, lire, faire du sport]**.</p>
-                    <p>N'hésitez pas à explorer mes projets et à me contacter pour toute collaboration !</p>
+                <h2>Présentation</h2>
+                <p>Bienvenue sur mon portfolio ! Je suis Mehdi Naceri, un développeur web passionné par la création d'applications web modernes et intuitives. Fort de mes formations et de mes expériences pratiques, je m'efforce de combiner esthétique et fonctionnalité pour offrir des solutions numériques de haute qualité. Ce portfolio met en lumière mon parcours, mes compétences, et mes projets significatifs réalisés dans le cadre de mes études et de mes expériences professionnelles.</p>
+                </div>
+        </section>
+
+        <section id="entreprise">
+            <div class="container">
+                <h2>Entreprise</h2>
+                <p>Actuellement, je suis en poste chez [Nom de l'entreprise où vous travaillez ou avez travaillé]. Mon rôle consiste à [décrivez vos responsabilités principales, ex: développer des interfaces utilisateurs, maintenir des bases de données, etc.]. J'y ai acquis une solide expérience dans [mentionnez des technologies spécifiques, des méthodologies, ex: Agile, gestion de projet, travail d'équipe sur de grands projets]. Cette expérience a été cruciale pour approfondir mes compétences techniques et ma capacité à travailler en équipe sur des défis concrets du monde de l'entreprise.</p>
+                </div>
+        </section>
+
+        <section id="projet-e5">
+            <div class="container">
+                <h2>Projet E5</h2>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <h3>Projet E5 - Encadré 1</h3>
+                        <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=Projet+E5+1" alt="Projet E5 - 1">
+                        <p>Description courte du premier projet E5. Ce projet portait sur [thème du projet] et m'a permis de développer [compétences acquises].</p>
+                        <a href="#" target="_blank">Voir le projet</a>
+                    </div>
+                    <div class="project-item">
+                        <h3>Projet E5 - Encadré 2</h3>
+                        <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=Projet+E5+2" alt="Projet E5 - 2">
+                        <p>Deuxième projet pour l'E5. Focus sur [un aspect spécifique, ex: gestion de base de données, API REST].</p>
+                        <a href="#" target="_blank">Voir le projet</a>
+                    </div>
+                    <div class="project-item">
+                        <h3>Projet E5 - Encadré 3</h3>
+                        <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=Projet+E5+3" alt="Projet E5 - 3">
+                        <p>Troisième projet de l'E5. Une exploration de [une technologie ou un concept].</p>
+                        <a href="#" target="_blank">Voir le projet</a>
+                    </div>
+                    <div class="project-item">
+                        <h3>Projet E5 - Encadré 4</h3>
+                        <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=Projet+E5+4" alt="Projet E5 - 4">
+                        <p>Quatrième projet E5. Application de [une méthodologie ou un outil] pour résoudre un problème.</p>
+                        <a href="#" target="_blank">Voir le projet</a>
+                    </div>
+                    <div class="project-item">
+                        <h3>Projet E5 - Encadré 5</h3>
+                        <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=Projet+E5+5" alt="Projet E5 - 5">
+                        <p>Cinquième projet pour l'E5. Expérimentation avec [une nouvelle bibliothèque ou un framework].</p>
+                        <a href="#" target="_blank">Voir le projet</a>
+                    </div>
+                    <div class="project-item">
+                        <h3>Projet E5 - Encadré 6</h3>
+                        <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=Projet+E5+6" alt="Projet E5 - 6">
+                        <p>Dernier projet E5. Un défi de [type de défi, ex: optimisation de performance, interface utilisateur complexe].</p>
+                        <a href="#" target="_blank">Voir le projet</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section">
+        <section id="projet-e6">
             <div class="container">
-                <h2>Mes Réalisations</h2>
+                <h2>Projet E6</h2>
                 <div class="projects-grid">
-                    <a href="https://github.com/votre_utilisateur/projet-1" target="_blank" class="project-card">
-                        <img src="https://via.placeholder.com/600x400?text=Projet+1" alt="Capture d'écran du Projet 1">
-                        <h3>Projet Titre 1</h3>
-                        <p>Description courte du projet 1, technologies utilisées (ex: React, Node.js, MongoDB).</p>
-                        <span class="project-link">Voir le projet &rarr;</span>
-                    </a>
-                    <a href="https://github.com/votre_utilisateur/projet-2" target="_blank" class="project-card">
-                        <img src="https://via.placeholder.com/600x400?text=Projet+2" alt="Capture d'écran du Projet 2">
-                        <h3>Projet Titre 2</h3>
-                        <p>Description courte du projet 2, technologies utilisées (ex: Vue.js, Express, PostgreSQL).</p>
-                        <span class="project-link">Voir le projet &rarr;</span>
-                    </a>
-                    <a href="https://github.com/votre_utilisateur/projet-3" target="_blank" class="project-card">
-                        <img src="https://via.placeholder.com/600x400?text=Projet+3" alt="Capture d'écran du Projet 3">
-                        <h3>Projet Titre 3</h3>
-                        <p>Description courte du projet 3, technologies utilisées (ex: HTML, CSS, JavaScript pur).</p>
-                        <span class="project-link">Voir le projet &rarr;</span>
-                    </a>
+                    <div class="project-item">
+                        <h3>Projet E6 - Projet 1</h3>
+                        <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=Projet+E6+1" alt="Projet E6 - 1">
+                        <p>Premier grand projet pour l'E6. Mise en œuvre de [technologies clés] et résolution de [problème majeur].</p>
+                        <a href="#" target="_blank">Voir le projet</a>
                     </div>
+                    <div class="project-item">
+                        <h3>Projet E6 - Projet 2</h3>
+                        <img src="https://via.placeholder.com/300x200/0f3460/ffffff?text=Projet+E6+2" alt="Projet E6 - 2">
+                        <p>Deuxième projet majeur de l'E6. Ce projet a mis à l'épreuve mes compétences en [aspects spécifiques, ex: architecture logicielle, déploiement].</p>
+                        <a href="#" target="_blank">Voir le projet</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="skills" class="section">
-            <div class="container">
-                <h2>Mes Compétences</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fab fa-html5"></i>
-                        <p>HTML5</p>
-                        <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-css3-alt"></i>
-                        <p>CSS3</p>
-                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-js"></i>
-                        <p>JavaScript</p>
-                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-react"></i>
-                        <p>React</p>
-                        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fab fa-node-js"></i>
-                        <p>Node.js</p>
-                        <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-database"></i>
-                        <p>SQL/NoSQL</p>
-                        <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-                    </div>
-                    </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
+        <section id="contact">
             <div class="container">
                 <h2>Contactez-moi</h2>
-                <p class="contact-intro">N'hésitez pas à me contacter pour discuter de vos projets ou pour toute question. Je serai ravi d'échanger avec vous !</p>
-                <form id="contactForm" class="contact-form">
-                    <div class="form-group">
-                        <label for="name" class="sr-only">Nom</label>
-                        <input type="text" id="name" name="name" placeholder="Votre Nom" required>
+                <p>N'hésitez pas à me contacter pour toute opportunité ou question !</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:votre.email@example.com" style="color: #e0e0e0; text-decoration: none;">votre.email@example.com</a></span>
                     </div>
-                    <div class="form-group">
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Votre Email" required>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+33 6 12 34 56 78</span>
                     </div>
-                    <div class="form-group">
-                        <label for="subject" class="sr-only">Sujet</label>
-                        <input type="text" id="subject" name="subject" placeholder="Sujet du Message" required>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Votre Ville, France</span>
                     </div>
-                    <div class="form-group">
-                        <label for="message" class="sr-only">Message</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Votre Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Envoyer le message</button>
-                    <p id="formMessage" class="form-message"></p>
-                </form>
-            </div>
+                </div>
+                </div>
         </section>
     </main>
 
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <p>&copy; 2025 Votre Nom. Tous droits réservés.</p>
+            <p>&copy; 2025 Mehdi Naceri. Tous droits réservés.</p>
             <div class="social-links">
-                <a href="https://github.com/votre_utilisateur" target="_blank" aria-label="Mon profil GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/votre_profil/" target="_blank" aria-label="Mon profil LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/votre-utilisateur-github" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/votre-profil-linkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // JavaScript pour le défilement fluide
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Ce script gère les barres de progression si vous les réintégrez
+        // Les barres de progression ont été retirées de la structure HTML actuelle pour simplifier.
+        // Si vous les ajoutez, il faudra une section #skills et des div avec des data-level.
+        // Exemple:
+        /*
+        document.addEventListener('DOMContentLoaded', () => {
+            const skillsSection = document.getElementById('skills');
+            if (skillsSection) {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+                                const level = bar.dataset.level;
+                                bar.style.width = level + '%';
+                            });
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 }); // Déclenche quand 50% de la section est visible
+
+                observer.observe(skillsSection);
+            }
+        });
+        */
+    </script>
 </body>
 </html>
