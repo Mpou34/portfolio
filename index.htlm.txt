@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Développeur Web</title>
+    <meta name="description" content="Portfolio personnel d'un développeur web, présentant projets, compétences et biographie.">
+    <meta name="keywords" content="développeur web, portfolio, HTML, CSS, JavaScript, projets, compétences">
+    <meta name="author" content="Votre Nom">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="nav-logo">Votre Nom</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">À propos</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projets</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Compétences</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Salut, je suis <span class="highlight">Votre Nom</span>.</h1>
+                <p class="hero-subtitle">Je crée des expériences web uniques et performantes.</p>
+                <a href="#projects" class="btn-primary">Voir mes projets</a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>À propos de moi</h2>
+                <div class="about-content">
+                    <p>Bonjour ! Je suis **Votre Nom**, un développeur web passionné par la création d'interfaces intuitives et de solutions robustes. Fort d'une expérience en **[mentionnez votre domaine spécifique, ex: développement frontend, backend, fullstack]**, je m'engage à écrire un code propre, performant et maintenable.</p>
+                    <p>Mon parcours m'a permis de travailler sur divers projets, du site vitrine responsif à l'application web complexe. J'aime particulièrement transformer des idées complexes en expériences utilisateur fluides et agréables. Lorsque je ne suis pas devant mon écran, vous me trouverez probablement en train de **[mentionnez un hobby, ex: explorer de nouvelles technologies, lire, faire du sport]**.</p>
+                    <p>N'hésitez pas à explorer mes projets et à me contacter pour toute collaboration !</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Mes Réalisations</h2>
+                <div class="projects-grid">
+                    <a href="https://github.com/votre_utilisateur/projet-1" target="_blank" class="project-card">
+                        <img src="https://via.placeholder.com/600x400?text=Projet+1" alt="Capture d'écran du Projet 1">
+                        <h3>Projet Titre 1</h3>
+                        <p>Description courte du projet 1, technologies utilisées (ex: React, Node.js, MongoDB).</p>
+                        <span class="project-link">Voir le projet &rarr;</span>
+                    </a>
+                    <a href="https://github.com/votre_utilisateur/projet-2" target="_blank" class="project-card">
+                        <img src="https://via.placeholder.com/600x400?text=Projet+2" alt="Capture d'écran du Projet 2">
+                        <h3>Projet Titre 2</h3>
+                        <p>Description courte du projet 2, technologies utilisées (ex: Vue.js, Express, PostgreSQL).</p>
+                        <span class="project-link">Voir le projet &rarr;</span>
+                    </a>
+                    <a href="https://github.com/votre_utilisateur/projet-3" target="_blank" class="project-card">
+                        <img src="https://via.placeholder.com/600x400?text=Projet+3" alt="Capture d'écran du Projet 3">
+                        <h3>Projet Titre 3</h3>
+                        <p>Description courte du projet 3, technologies utilisées (ex: HTML, CSS, JavaScript pur).</p>
+                        <span class="project-link">Voir le projet &rarr;</span>
+                    </a>
+                    </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Mes Compétences</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <p>HTML5</p>
+                        <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <p>CSS3</p>
+                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <p>JavaScript</p>
+                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-react"></i>
+                        <p>React</p>
+                        <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-node-js"></i>
+                        <p>Node.js</p>
+                        <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <p>SQL/NoSQL</p>
+                        <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contactez-moi</h2>
+                <p class="contact-intro">N'hésitez pas à me contacter pour discuter de vos projets ou pour toute question. Je serai ravi d'échanger avec vous !</p>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="sr-only">Nom</label>
+                        <input type="text" id="name" name="name" placeholder="Votre Nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="sr-only">Sujet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Sujet du Message" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Votre Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Envoyer le message</button>
+                    <p id="formMessage" class="form-message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Votre Nom. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://github.com/votre_utilisateur" target="_blank" aria-label="Mon profil GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/votre_profil/" target="_blank" aria-label="Mon profil LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
